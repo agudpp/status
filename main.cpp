@@ -24,6 +24,7 @@ main(void)
 {
     // init the handler
     static StatusHandler<std::string> statusHandler;
+    // set the global handler to be used by all the Status instances
     Status::s_shandler = &statusHandler;
 
     SampleModule sm;
@@ -74,7 +75,6 @@ main(void)
     }
     t2 = TimeHelper::currentTime();
     statusComplexTime = t2 - t1;
-
 
     // now print the statistics
     std::cout << "We run\n"
