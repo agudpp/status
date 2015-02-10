@@ -14,9 +14,9 @@
 #include "StatusHandler.h"
 
 
-
-
-/// Helper macros to check a specific status if critical and return
+///
+/// Example of a macro that can be used to check if a status is critical and
+/// return it automatically, this helps to keep the code clean
 ///
 #define ST_CHECK_CRITICAL(st)\
     if (st.severity() == StatusSeverity::STS_CRITICAL) {\
@@ -24,18 +24,21 @@
     }
 
 
-
-/// \brief Here we will define the list of common Status we can return (error code)
+///
+/// \brief Example of error codes (Status code)
 ///
 enum StatusCode {
     STC_NO_ERROR        = 0,    // No error
     STC_INTERNAL_ERROR,         // when something really bad happens inside of a method
     STC_INVALID_ARGS,           // something is wrong with the arguments
     STC_NOT_POSSIBLE,           // when we are not able to execute a certain operation
-    // ...
+
+    // ... whatever welse we want ...
 };
 
-/// \brief We can assign a severity as well to the status.
+///
+/// \brief We will also gonna use the Severity to clasify the different kind
+///        of possible errors.
 ///
 enum StatusSeverity {
     STS_UNDEFINED   = 0,
